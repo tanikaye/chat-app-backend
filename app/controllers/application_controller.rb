@@ -3,10 +3,10 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
 
-  get '/' do
-    "Hello World"
-  end
-  
+  # get '/' do
+  #   "Hello World"
+  # end
+
   get "/users" do
     users=User.all
     users.to_json
@@ -25,5 +25,6 @@ class ApplicationController < Sinatra::Base
     user=Message.all
     user.to_json
   end
+   
   
 end
