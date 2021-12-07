@@ -3,9 +3,9 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
 
-  # get '/' do
-  #   "Hello World"
-  # end
+  get '/' do
+    "Hello World"
+  end
 
   get "/users" do
     users=User.all
@@ -33,9 +33,10 @@ class ApplicationController < Sinatra::Base
   # end
   post '/users' do 
     new_user = User.create(
-      username: params[:username]
-      full_name: params[:full_name]
+      username: params[:username],
+      full_name: params[:full_name],
       email: params[:email]
-    )
+  )
     new_user.to_json
+  end 
 end
