@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     user=Message.all
     user.to_json
   end
-   
+
   # delete '/messages/:id' do
   #   rm_message= Message.find(params[:id])
   #   rm_message.destroy
@@ -40,3 +40,4 @@ class ApplicationController < Sinatra::Base
     new_user.to_json
   end 
 end
+#   post '/
