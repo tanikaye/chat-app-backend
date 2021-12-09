@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
     rm_user.to_json
   end
 
-  post '/users' do 
+  post '/users' do
     new_user = User.create(
       username: params[:username],
       full_name: params[:full_name],
@@ -60,8 +60,6 @@ class ApplicationController < Sinatra::Base
      )
      new_message.to_json
 end
-
-
 end 
 
 
