@@ -27,6 +27,11 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  get "/conversations/:id" do
+    convo=Conversation.find(params[:id])
+    convo.to_json
+  end
+
   get "/conversations/:id/messages" do
     msg=Conversation.find(params[:id]).messages
     msg.to_json
@@ -36,8 +41,8 @@ class ApplicationController < Sinatra::Base
   #   msg.to_json
   # end
 
-  delete '/users/:id' do
-    rm_user= Users.find(params[:id])
+  delete '/messages/:id' do
+    rm_user= Message.find(params[:id])
     rm_user.destroy
     rm_user.to_json
   end
@@ -59,7 +64,15 @@ class ApplicationController < Sinatra::Base
      conversation_id: params[:conversation_id]
      )
      new_message.to_json
-end
+  end 
+
+     post '/conversations' do 
+      new_convo = Conversation.create(
+        topic: params[:topic]
+      )
+      new_convo.to_json
+     end 
+      
 end 
 
 
