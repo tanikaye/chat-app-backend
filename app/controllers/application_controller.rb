@@ -62,7 +62,6 @@ class ApplicationController < Sinatra::Base
     new_user.to_json
   end 
 
-
   post '/messages' do 
      new_message = Message.create(
      message: params[:message],
